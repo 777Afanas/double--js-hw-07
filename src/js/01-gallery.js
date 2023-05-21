@@ -35,17 +35,37 @@ function onGalleryContainerClick(evt) {
   }
   
   const instance = basicLightbox.create(
-    `<img src= "${evt.target.dataset.source}" width="800" height="600">`
+    `<img src= "${evt.target.dataset.source}" width="800" height="600">`,
+   
   );
 
   instance.show();
 
-  //   console.log(evt.target.dataset.source);
+  document.addEventListener("keydown", onEscKeyPress);
+  
+function onEscKeyPress(evt) {
+  
+  if (evt.code === "Escape") {
+    // console.log(evt)
+    // return;
+    instance.close();
+     console.log(evt)
+  // return;
+  }
+  // instance.close();
+}
+  // document.removeEventListener("keydown", onEscKeyPress);
+
+
 }
 
-function onEscKeyPress(evt) {
-  if (evt.code === "Escape") {
-    return;
-  }
-  instance.close();
-}
+// document.removeEventListener("keydown", onEscKeyPress);
+// function onEscKeyPress(evt) {
+ 
+//   if (evt.code === "Escape") {
+//     console.log(evt)
+//     return;
+  
+//   }
+//   // instance.close();
+//   }
