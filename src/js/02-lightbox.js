@@ -24,4 +24,10 @@ function createGalleryItemsMarkup(galleryItems) {
 }
 
 console.log(galleryItemsMarkup);
-new SimpleLightbox({elements: '.galleryItems a'});
+
+let lightbox = new SimpleLightbox('.gallery a', {
+  captions: true,
+  captionsData: "alt",
+  captionDelay: 250,
+});
+
